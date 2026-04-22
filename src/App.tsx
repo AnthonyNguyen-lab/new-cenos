@@ -571,7 +571,7 @@ const FinanceView = () => {
           <div className="bg-white rounded-2xl border border-slate-100 shadow-sm overflow-hidden">
             <table className="w-full text-left border-collapse">
               <thead>
-                <tr className="bg-[#1e3a5f] text-white">
+                <tr className="bg-[#303B70] text-white">
                   <th className="px-4 py-4 text-[10px] font-bold uppercase tracking-wider">Student Name</th>
                   <th className="px-4 py-4 text-[10px] font-bold uppercase tracking-wider">Contract ID</th>
                   <th className="px-4 py-4 text-[10px] font-bold uppercase tracking-wider text-right">Fee</th>
@@ -797,10 +797,10 @@ const PermissionManagementView = () => {
 
     const getAccessColor = (level: AccessLevel) => {
       switch (level) {
-        case 'none': return 'text-slate-400 bg-slate-50 border-slate-200';
-        case 'view': return 'text-indigo-600 bg-indigo-50 border-indigo-200';
-        case 'full': return 'text-emerald-600 bg-emerald-50 border-emerald-200';
-        default: return 'text-slate-400 bg-slate-50 border-slate-200';
+        case 'none': return 'text-[var(--text-body)] bg-[var(--surface)] border-slate-200';
+        case 'view': return 'text-white bg-[var(--primary)] border-[var(--primary-light)]';
+        case 'full': return 'text-[var(--primary)] bg-[var(--accent)] border-[var(--accent-dark)]';
+        default: return 'text-[var(--text-body)] bg-[var(--surface)] border-slate-200';
       }
     };
 
@@ -1019,8 +1019,8 @@ export default function App() {
       onClick={() => setActiveView(id)}
       className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg transition-all duration-200 ${
         activeView === id 
-          ? 'bg-indigo-600 text-white shadow-lg shadow-indigo-200' 
-          : 'text-slate-600 hover:bg-slate-100'
+          ? 'bg-[var(--accent)] text-[var(--primary)] shadow-lg' 
+          : 'text-white/80 hover:bg-white/10 hover:text-white'
       }`}
     >
       <Icon size={20} />
@@ -1392,7 +1392,7 @@ export default function App() {
                         <div 
                           key={event.id}
                           className={`absolute left-1 right-1 rounded-lg p-2 shadow-sm z-10 overflow-hidden transition-transform hover:scale-[1.02] ${
-                            event.type === 'teaching' ? 'bg-[#1e3a5f] text-white' :
+                            event.type === 'teaching' ? 'bg-[#303B70] text-white' :
                             event.type === 'admin' ? 'bg-indigo-100 border border-indigo-200 text-indigo-700' :
                             'bg-red-600 text-white border-2 border-yellow-400'
                           }`}
@@ -2509,7 +2509,7 @@ export default function App() {
           <div className="overflow-x-auto">
             <table className="w-full text-left border-collapse">
               <thead>
-                <tr className="bg-[#1e3a5f] text-white">
+                <tr className="bg-[#303B70] text-white">
                   <th className="px-4 py-3 text-[11px] font-bold uppercase border border-slate-700 text-center w-24">Student ID</th>
                   <th className="px-4 py-3 text-[11px] font-bold uppercase border border-slate-700 text-center w-48">Full Name</th>
                   {isMidterm ? (
@@ -3241,7 +3241,7 @@ export default function App() {
                           <li key={i} className="text-xs text-slate-600 flex items-start gap-2">
                             <span className="mt-1.5 w-1 h-1 rounded-full bg-slate-300 flex-shrink-0" />
                             {item.link ? (
-                              <a href={item.link} target="_blank" rel="noopener noreferrer" className="text-[#f0a500] hover:underline font-medium">
+                              <a href={item.link} target="_blank" rel="noopener noreferrer" className="text-[#FFCB1F] hover:underline font-medium">
                                 {item.label}
                               </a>
                             ) : (
@@ -3540,7 +3540,7 @@ export default function App() {
               <div className="overflow-x-auto border border-slate-100 rounded-xl shadow-sm">
                 <table className="w-full text-left border-collapse table-fixed">
                   <thead>
-                    <tr className="bg-[#1e3a5f] text-white">
+                    <tr className="bg-[#303B70] text-white">
                       <th className="w-12 px-4 py-3 text-[10px] font-bold uppercase tracking-widest border-r border-white/10">STT</th>
                       <th className="w-48 px-4 py-3 text-[10px] font-bold uppercase tracking-widest border-r border-white/10">Student Name</th>
                       <th className="px-4 py-3 text-[10px] font-bold uppercase tracking-widest border-r border-white/10">Listening</th>
@@ -3602,7 +3602,7 @@ export default function App() {
             <div className="overflow-x-auto">
               <table className="w-full text-left border-collapse">
                 <thead>
-                  <tr className="bg-[#1e3a5f] text-white">
+                  <tr className="bg-[#303B70] text-white">
                     <th className="px-4 py-3 text-[11px] font-bold uppercase border border-slate-700">Teacher</th>
                     <th className="px-4 py-3 text-[11px] font-bold uppercase border border-slate-700">Class ID</th>
                     <th className="px-4 py-3 text-[11px] font-bold uppercase border border-slate-700">Lesson Name</th>
@@ -3668,7 +3668,7 @@ export default function App() {
             <div className="overflow-x-auto">
               <table className="w-full text-left border-collapse min-w-[1200px]">
                 <thead>
-                  <tr className="bg-[#1e3a5f] text-white">
+                  <tr className="bg-[#303B70] text-white">
                     {isEditingSyllabus && (
                       <th className="px-2 py-3 text-[11px] font-bold uppercase border border-slate-700 text-center w-12">Move</th>
                     )}
@@ -5111,7 +5111,7 @@ export default function App() {
                     <div className="overflow-x-auto">
                       <table className="w-full text-left border-collapse">
                         <thead>
-                          <tr className="bg-[#1e3a5f] text-white">
+                          <tr className="bg-[#303B70] text-white">
                             <th className="px-3 py-4 text-[10px] font-bold uppercase tracking-wider">Course ID</th>
                             <th className="px-3 py-4 text-[10px] font-bold uppercase tracking-wider">Contract</th>
                             <th className="px-3 py-4 text-[10px] font-bold uppercase tracking-wider">Class ID</th>
@@ -5197,22 +5197,22 @@ export default function App() {
   };
 
   return (
-    <div className="navy-theme min-h-screen bg-slate-50 flex font-sans text-slate-900">
+    <div className="havina-theme min-h-screen bg-slate-50 flex font-sans text-slate-900">
       {/* Sidebar */}
       <motion.aside 
         initial={false}
         animate={{ width: isSidebarOpen ? 260 : 80 }}
-        className="bg-white border-r border-slate-200 flex flex-col sticky top-0 h-screen z-20"
+        className="on-navy bg-[var(--primary)] border-r border-[var(--primary-light)] flex flex-col sticky top-0 h-screen z-20"
       >
-        <div className="p-6 flex items-center gap-3 border-bottom border-slate-100">
-          <div className="w-10 h-10 bg-indigo-600 rounded-xl flex items-center justify-center text-white shrink-0">
+        <div className="p-6 flex items-center gap-3 border-bottom border-white/20">
+          <div className="w-10 h-10 bg-[var(--accent)] rounded-xl flex items-center justify-center text-[var(--primary)] shrink-0">
             <GraduationCap size={24} />
           </div>
           {isSidebarOpen && (
             <motion.span 
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              className="font-bold text-xl tracking-tight text-indigo-950"
+              className="font-bold text-xl tracking-tight text-white"
             >
               EnglishHub
             </motion.span>
@@ -5229,13 +5229,13 @@ export default function App() {
           <NavItem id="schedule" icon={Calendar} label="Lịch học" />
           <NavItem id="reports" icon={BarChart3} label="Báo cáo" />
           <NavItem id="permissions" icon={ShieldCheck} label="Phân quyền" />
-          <div className="pt-4 mt-4 border-t border-slate-100">
+          <div className="pt-4 mt-4 border-t border-white/20">
             <NavItem id="settings" icon={Settings} label="Cài đặt" />
           </div>
         </nav>
 
-        <div className="p-4 border-t border-slate-100">
-          <button className="w-full flex items-center gap-3 px-4 py-3 text-slate-500 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors">
+        <div className="p-4 border-t border-white/20">
+          <button className="w-full flex items-center gap-3 px-4 py-3 text-white/80 hover:text-[var(--primary)] hover:bg-[var(--accent)] rounded-lg transition-colors">
             <LogOut size={20} />
             <span className={`font-medium ${!isSidebarOpen && 'hidden'}`}>Đăng xuất</span>
           </button>
@@ -5245,18 +5245,18 @@ export default function App() {
       {/* Main Content */}
       <main className="flex-1 flex flex-col min-w-0">
         {/* Header */}
-        <header className="h-16 bg-white border-b border-slate-200 flex items-center justify-between px-8 sticky top-0 z-10">
+        <header className="on-navy h-16 bg-[var(--primary)] border-b border-[var(--primary-light)] flex items-center justify-between px-8 sticky top-0 z-10">
           <div className="flex items-center gap-4">
             <button 
               onClick={() => setIsSidebarOpen(!isSidebarOpen)}
-              className="p-2 hover:bg-slate-100 rounded-lg text-slate-500"
+              className="p-2 hover:bg-white/10 rounded-lg text-white/80"
             >
               <ChevronRight className={`transition-transform duration-300 ${isSidebarOpen ? 'rotate-180' : ''}`} size={20} />
             </button>
             <div className="flex items-center gap-2">
               <button 
                 onClick={() => setActiveView('students')}
-                className={`text-lg font-semibold transition-colors ${activeView === 'student-detail' || activeView === 'teacher-detail' ? 'text-slate-400 hover:text-slate-600' : 'text-slate-800'}`}
+                className={`text-lg font-semibold transition-colors ${activeView === 'student-detail' || activeView === 'teacher-detail' ? 'text-white/70 hover:text-white' : 'text-white'}`}
               >
                 {activeView === 'teachers' || activeView === 'teacher-detail' ? 'Giảng viên' : 
                  activeView === 'finance' ? 'Finance' :
@@ -5269,8 +5269,8 @@ export default function App() {
               </button>
               {(activeView === 'student-detail' || activeView === 'teacher-detail') && (
                 <>
-                  <ChevronRight size={16} className="text-slate-300" />
-                  <span className="text-lg font-semibold text-slate-800">
+                  <ChevronRight size={16} className="text-white/60" />
+                  <span className="text-lg font-semibold text-[var(--accent)]">
                     {activeView === 'teacher-detail' ? 'Chi tiết giảng viên' : 'Chi tiết học viên'}
                   </span>
                 </>
@@ -5280,25 +5280,25 @@ export default function App() {
 
           <div className="flex items-center gap-4">
             <div className="relative hidden md:block">
-              <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" size={18} />
+              <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-white/60" size={18} />
               <input 
                 type="text" 
                 placeholder="Tìm kiếm nhanh..." 
-                className="pl-10 pr-4 py-2 bg-slate-100 border-transparent focus:bg-white focus:border-indigo-500 rounded-full text-sm w-64 transition-all outline-none"
+                className="pl-10 pr-4 py-2 bg-white/10 border border-white/20 focus:bg-white/20 focus:border-[var(--accent)] rounded-full text-sm w-64 transition-all outline-none text-white placeholder:text-white/60"
               />
             </div>
-            <button className="p-2 text-slate-500 hover:bg-slate-100 rounded-full relative">
+            <button className="p-2 text-white/80 hover:bg-white/10 rounded-full relative">
               <Bell size={20} />
-              <span className="absolute top-1.5 right-1.5 w-2 h-2 bg-red-500 rounded-full border-2 border-white"></span>
+              <span className="absolute top-1.5 right-1.5 w-2 h-2 bg-[var(--accent)] rounded-full border-2 border-[var(--primary)]"></span>
             </button>
-            <div className="h-8 w-px bg-slate-200 mx-2"></div>
-            <div className="flex items-center gap-3 cursor-pointer hover:bg-slate-50 p-1 pr-3 rounded-full transition-colors">
-              <div className="w-8 h-8 bg-indigo-100 text-indigo-700 rounded-full flex items-center justify-center font-bold text-xs">
+            <div className="h-8 w-px bg-white/20 mx-2"></div>
+            <div className="flex items-center gap-3 cursor-pointer hover:bg-white/10 p-1 pr-3 rounded-full transition-colors">
+              <div className="w-8 h-8 bg-[var(--accent)] text-[var(--primary)] rounded-full flex items-center justify-center font-bold text-xs">
                 AD
               </div>
               <div className="hidden sm:block">
-                <p className="text-xs font-bold leading-none">Admin User</p>
-                <p className="text-[10px] text-slate-500 mt-1">Quản trị viên</p>
+                <p className="text-xs font-bold leading-none text-white">Admin User</p>
+                <p className="text-[10px] text-white/70 mt-1">Quản trị viên</p>
               </div>
             </div>
           </div>
@@ -5318,22 +5318,41 @@ export default function App() {
                 {/* Stats Cards */}
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
                   {[
-                    { label: 'Tổng học viên', value: '1,284', change: '+12%', icon: Users, color: 'indigo' },
-                    { label: 'Đang hoạt động', value: '856', change: '+5%', icon: GraduationCap, color: 'emerald' },
-                    { label: 'Học viên mới', value: '42', change: '+18%', icon: Plus, color: 'amber' },
-                    { label: 'Tỷ lệ duy trì', value: '94%', change: '+2%', icon: BarChart3, color: 'rose' },
+                    { label: 'Tổng học viên', value: '1,284', change: '+12%', icon: Users },
+                    { label: 'Đang hoạt động', value: '856', change: '+5%', icon: GraduationCap },
+                    { label: 'Học viên mới', value: '42', change: '+18%', icon: Plus },
+                    { label: 'Tỷ lệ duy trì', value: '94%', change: '+2%', icon: BarChart3 },
                   ].map((stat, i) => (
-                    <div key={i} className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+                    <div
+                      key={i}
+                      className={`p-6 rounded-2xl border shadow-sm ${
+                        i % 2 === 0
+                          ? 'on-navy bg-[var(--primary)] border-[var(--primary-light)]'
+                          : 'bg-[var(--card-bg)] border-slate-200'
+                      }`}
+                    >
                       <div className="flex justify-between items-start mb-4">
-                        <div className={`p-3 rounded-xl bg-${stat.color}-50 text-${stat.color}-600`}>
+                        <div
+                          className={`p-3 rounded-xl ${
+                            i % 2 === 0
+                              ? 'bg-[var(--accent)] text-[var(--primary)]'
+                              : 'bg-[var(--surface)] text-[var(--action)]'
+                          }`}
+                        >
                           <stat.icon size={24} />
                         </div>
-                        <span className="text-xs font-bold text-emerald-600 bg-emerald-50 px-2 py-1 rounded-lg">
+                        <span
+                          className={`text-xs font-bold px-2 py-1 rounded-lg ${
+                            i % 2 === 0
+                              ? 'bg-[var(--accent)] text-[var(--primary)]'
+                              : 'bg-[var(--surface)] text-[var(--action)]'
+                          }`}
+                        >
                           {stat.change}
                         </span>
                       </div>
-                      <p className="text-slate-500 text-sm font-medium">{stat.label}</p>
-                      <h3 className="text-2xl font-bold mt-1">{stat.value}</h3>
+                      <p className={`text-sm font-medium ${i % 2 === 0 ? 'text-white/80' : 'text-[var(--text-body)]'}`}>{stat.label}</p>
+                      <h3 className={`text-2xl font-bold mt-1 ${i % 2 === 0 ? 'text-white' : 'text-[var(--primary)]'}`}>{stat.value}</h3>
                     </div>
                   ))}
                 </div>
