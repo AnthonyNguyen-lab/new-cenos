@@ -1019,8 +1019,8 @@ export default function App() {
       onClick={() => setActiveView(id)}
       className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg transition-all duration-200 ${
         activeView === id 
-          ? 'bg-[rgba(255,203,31,0.12)] text-[var(--yellow)] border-l-[3px] border-[var(--yellow)] pl-[13px]' 
-          : 'text-white/55 hover:bg-white/10 hover:text-white'
+          ? 'bg-[rgba(151,171,218,0.28)] text-white border-l-[3px] border-[rgba(180,200,255,0.9)] pl-[13px]' 
+          : 'text-white/70 hover:bg-white/10 hover:text-white'
       }`}
     >
       <Icon size={20} />
@@ -5205,7 +5205,7 @@ export default function App() {
         className="sidebar-cenos bg-[var(--navy-dark)] border-r border-[rgba(255,255,255,0.08)] flex flex-col sticky top-0 h-screen z-20"
       >
         <div className="p-6 flex items-center gap-3 border-bottom border-white/20">
-          <div className="w-10 h-10 bg-[var(--yellow)] rounded-xl flex items-center justify-center text-[var(--navy)] shrink-0">
+          <div className="w-10 h-10 bg-white/15 rounded-xl flex items-center justify-center text-white shrink-0">
             <GraduationCap size={24} />
           </div>
           {isSidebarOpen && (
@@ -5235,7 +5235,7 @@ export default function App() {
         </nav>
 
         <div className="p-4 border-t border-white/20">
-          <button className="w-full flex items-center gap-3 px-4 py-3 text-white/80 hover:text-[var(--navy)] hover:bg-[var(--yellow)] rounded-lg transition-colors">
+          <button className="w-full flex items-center gap-3 px-4 py-3 text-white/75 hover:text-white hover:bg-white/10 rounded-lg transition-colors">
             <LogOut size={20} />
             <span className={`font-medium ${!isSidebarOpen && 'hidden'}`}>Đăng xuất</span>
           </button>
@@ -5326,39 +5326,33 @@ export default function App() {
                     <div
                       key={i}
                       className={`p-6 rounded-2xl border shadow-sm ${
-                        i % 3 === 0
+                        i % 2 === 0
                           ? 'stat-card-dark bg-[var(--navy)] border-[rgba(255,255,255,0.12)]'
-                          : i % 3 === 1
-                            ? 'stat-card-light bg-[var(--card-bg)] border-[rgba(48,59,112,0.1)]'
-                            : 'stat-card-yellow bg-[var(--yellow)] border-[rgba(48,59,112,0.15)]'
+                          : 'stat-card-light bg-[var(--card-bg)] border-[rgba(48,59,112,0.1)]'
                       }`}
                     >
                       <div className="flex justify-between items-start mb-4">
                         <div
                           className={`p-3 rounded-xl ${
-                            i % 3 === 0
-                              ? 'bg-[rgba(255,203,31,0.2)] text-[var(--yellow)]'
-                              : i % 3 === 1
-                                ? 'bg-[rgba(48,59,112,0.08)] text-[var(--navy)]'
-                                : 'bg-[rgba(48,59,112,0.15)] text-[var(--navy)]'
+                            i % 2 === 0
+                              ? 'bg-[rgba(255,255,255,0.18)] text-white'
+                              : 'bg-[rgba(48,59,112,0.08)] text-[var(--navy)]'
                           }`}
                         >
                           <stat.icon size={24} />
                         </div>
                         <span
                           className={`text-xs font-bold px-2 py-1 rounded-lg ${
-                            i % 3 === 0
+                            i % 2 === 0
                               ? 'bg-[rgba(255,255,255,0.15)] text-white'
-                              : i % 3 === 1
-                                ? 'bg-[rgba(237,28,41,0.1)] text-[var(--red)]'
-                                : 'bg-[rgba(48,59,112,0.15)] text-[var(--navy)]'
+                              : 'bg-[rgba(34,197,94,0.12)] text-[var(--success)]'
                           }`}
                         >
                           {stat.change}
                         </span>
                       </div>
-                      <p className={`text-sm font-medium ${i % 3 === 0 ? 'text-white/80' : 'text-[var(--mid-text)]'}`}>{stat.label}</p>
-                      <h3 className={`text-2xl font-extrabold mt-1 ${i % 3 === 0 ? 'text-white' : 'text-[var(--navy)]'}`}>{stat.value}</h3>
+                      <p className={`text-sm font-medium ${i % 2 === 0 ? 'text-white/80' : 'text-[var(--mid-text)]'}`}>{stat.label}</p>
+                      <h3 className={`text-2xl font-extrabold mt-1 ${i % 2 === 0 ? 'text-white' : 'text-[var(--navy)]'}`}>{stat.value}</h3>
                     </div>
                   ))}
                 </div>

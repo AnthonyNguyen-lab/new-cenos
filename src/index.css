@@ -60,38 +60,6 @@ body {
   color: var(--navy);
 }
 
-.cenos-theme :is(button, a)[class*="bg-indigo-"],
-.cenos-theme :is(button, a)[class*="bg-blue-"],
-.cenos-theme :is(button, a)[class*="bg-emerald-"],
-.cenos-theme :is(button, a)[class*="bg-green-"] {
-  background-color: var(--red) !important;
-  color: #fff !important;
-  font-family: "Lexend", sans-serif;
-  font-weight: 700;
-}
-
-.cenos-theme :is(button, a)[class*="bg-indigo-"]:hover,
-.cenos-theme :is(button, a)[class*="bg-blue-"]:hover,
-.cenos-theme :is(button, a)[class*="bg-emerald-"]:hover,
-.cenos-theme :is(button, a)[class*="bg-green-"]:hover {
-  background-color: var(--red-hover) !important;
-}
-
-.cenos-theme .sidebar-cenos :is(button, a)[class*="bg-"],
-.cenos-theme .sidebar-cenos :is(button, a)[class*="text-red-"] {
-  background-color: var(--yellow) !important;
-  color: var(--navy) !important;
-  border-color: var(--yellow-dark) !important;
-}
-
-.cenos-theme .sidebar-cenos [class*="text-red-"],
-.cenos-theme .sidebar-cenos [class*="bg-red-"],
-.cenos-theme .sidebar-cenos [class*="border-red-"] {
-  color: var(--yellow) !important;
-  background-color: transparent !important;
-  border-color: var(--yellow) !important;
-}
-
 .cenos-theme .sidebar-cenos [class*="text-slate-"],
 .cenos-theme .sidebar-cenos [class*="text-indigo-"],
 .cenos-theme .sidebar-cenos [class*="text-emerald-"],
@@ -101,6 +69,42 @@ body {
 .cenos-theme .sidebar-cenos [class*="text-purple-"],
 .cenos-theme .sidebar-cenos [class*="text-orange-"] {
   color: rgb(255 255 255 / 55%) !important;
+}
+
+.cenos-theme .sidebar-cenos button[class*="text-white"] {
+  color: rgb(255 255 255 / 70%) !important;
+}
+
+.cenos-theme .sidebar-cenos button[class*="border-l"] {
+  color: #fff !important;
+}
+
+.cenos-theme .topbar-cenos :is(button, a)[class*="bg-indigo-"],
+.cenos-theme .topbar-cenos :is(button, a)[class*="bg-blue-"],
+.cenos-theme .topbar-cenos :is(button, a)[class*="bg-emerald-"] {
+  background-color: var(--navy) !important;
+  color: #fff !important;
+  font-family: "Lexend", sans-serif;
+  font-weight: 700;
+}
+
+.cenos-theme .topbar-cenos :is(button, a)[class*="bg-indigo-"]:hover,
+.cenos-theme .topbar-cenos :is(button, a)[class*="bg-blue-"]:hover,
+.cenos-theme .topbar-cenos :is(button, a)[class*="bg-emerald-"]:hover {
+  background-color: var(--navy-light) !important;
+}
+
+.cenos-theme :is(button, a)[class*="bg-indigo-"],
+.cenos-theme :is(button, a)[class*="bg-blue-"] {
+  background-color: var(--navy) !important;
+  color: #fff !important;
+  font-family: "Lexend", sans-serif;
+  font-weight: 700;
+}
+
+.cenos-theme :is(button, a)[class*="bg-indigo-"]:hover,
+.cenos-theme :is(button, a)[class*="bg-blue-"]:hover {
+  background-color: var(--navy-light) !important;
 }
 
 .cenos-theme [class*="bg-slate-50"],
@@ -157,12 +161,12 @@ body {
 }
 
 .cenos-theme table thead tr {
-  background-color: var(--navy) !important;
-  color: var(--yellow) !important;
+  background-color: #f3f6fc !important;
+  color: var(--mid-text) !important;
 }
 
 .cenos-theme table thead th {
-  color: var(--yellow) !important;
+  color: #6b7280 !important;
   font-family: "Lexend", sans-serif;
   font-weight: 600 !important;
   letter-spacing: 1px;
@@ -216,16 +220,6 @@ body {
 .cenos-theme .stat-card-light {
   background-color: var(--card-bg) !important;
   border: 1px solid rgb(48 59 112 / 10%) !important;
-}
-
-.cenos-theme .stat-card-yellow {
-  background-color: var(--yellow) !important;
-  color: var(--navy) !important;
-}
-
-.cenos-theme .stat-card-yellow h3,
-.cenos-theme .stat-card-yellow p {
-  color: var(--navy) !important;
 }
 
 .cenos-theme [class*="rounded-full"][class*="bg-blue-100"] {
@@ -289,13 +283,6 @@ body {
 .cenos-theme .sidebar-cenos [class*="text-yellow-"],
 .cenos-theme .sidebar-cenos .text-\[\#FFCB1F\] {
   color: var(--yellow) !important;
-}
-
-.cenos-theme .topbar-cenos [class*="bg-indigo-"],
-.cenos-theme .topbar-cenos [class*="bg-blue-"],
-.cenos-theme .topbar-cenos [class*="bg-emerald-"] {
-  background-color: var(--red) !important;
-  color: #fff !important;
 }
 
 .cenos-theme .bg-\[\#303B70\],
