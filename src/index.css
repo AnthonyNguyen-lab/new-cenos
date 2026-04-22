@@ -1,203 +1,312 @@
-@import url("https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;600;700;800&family=Be+Vietnam+Pro:wght@300;400;500;600;700&display=swap");
 @import "tailwindcss";
 
 :root {
-  --primary: #303b70;
-  --primary-dark: #252e5a;
-  --primary-light: #4a5590;
-  --accent: #ffcb1f;
-  --accent-dark: #f0c000;
-  --action: #ed1c29;
-  --action-hover: #c41020;
-  --surface: #f4f5fa;
+  --navy: #303b70;
+  --navy-dark: #252e5a;
+  --navy-light: #4a5590;
+  --yellow: #ffcb1f;
+  --yellow-dark: #f0c000;
+  --red: #ed1c29;
+  --red-hover: #c41020;
+  --success: #22c55e;
+  --warning: #f59e0b;
+  --info: #3b82f6;
+  --muted: #9ca3af;
+  --surface: #f2f4fa;
   --card-bg: #ffffff;
-  --text-body: #333333;
+  --text-body: #1a2040;
+  --mid-text: #444444;
 }
 
 body {
+  font-family: "Be Vietnam Pro", sans-serif;
+  background: var(--surface);
+  color: var(--text-body);
+}
+
+.cenos-theme {
+  background: var(--surface);
+  color: var(--text-body);
+}
+
+.cenos-theme h1,
+.cenos-theme h2,
+.cenos-theme h3,
+.cenos-theme h4,
+.cenos-theme h5,
+.cenos-theme h6,
+.cenos-theme .font-bold,
+.cenos-theme .font-black,
+.cenos-theme .font-semibold,
+.cenos-theme button,
+.cenos-theme .sidebar-cenos,
+.cenos-theme .stat-card-dark h3,
+.cenos-theme .stat-card-light h3,
+.cenos-theme .stat-card-yellow h3 {
   font-family: "Lexend", sans-serif;
-  background: var(--surface);
-  color: var(--text-body);
 }
 
-.havina-theme {
-  background: var(--surface);
-  color: var(--text-body);
+.cenos-theme .sidebar-cenos {
+  background-color: var(--navy-dark) !important;
 }
 
-.havina-theme .on-navy {
-  background-color: var(--primary) !important;
+.cenos-theme .topbar-cenos {
+  background-color: var(--card-bg) !important;
+  border-bottom: 1px solid rgb(48 59 112 / 10%) !important;
+}
+
+.cenos-theme .topbar-cenos * {
+  color: var(--navy);
+}
+
+.cenos-theme :is(button, a)[class*="bg-indigo-"],
+.cenos-theme :is(button, a)[class*="bg-blue-"],
+.cenos-theme :is(button, a)[class*="bg-emerald-"],
+.cenos-theme :is(button, a)[class*="bg-green-"] {
+  background-color: var(--red) !important;
   color: #fff !important;
+  font-family: "Lexend", sans-serif;
+  font-weight: 700;
 }
 
-/* Sidebar / topbar rules on navy */
-.havina-theme .on-navy [class*="text-slate-"],
-.havina-theme .on-navy [class*="text-indigo-"],
-.havina-theme .on-navy [class*="text-emerald-"],
-.havina-theme .on-navy [class*="text-amber-"],
-.havina-theme .on-navy [class*="text-blue-"],
-.havina-theme .on-navy [class*="text-green-"],
-.havina-theme .on-navy [class*="text-purple-"],
-.havina-theme .on-navy [class*="text-orange-"] {
-  color: #fff !important;
+.cenos-theme :is(button, a)[class*="bg-indigo-"]:hover,
+.cenos-theme :is(button, a)[class*="bg-blue-"]:hover,
+.cenos-theme :is(button, a)[class*="bg-emerald-"]:hover,
+.cenos-theme :is(button, a)[class*="bg-green-"]:hover {
+  background-color: var(--red-hover) !important;
 }
 
-/* Never place red directly on navy */
-.havina-theme .on-navy [class*="text-red-"],
-.havina-theme .on-navy [class*="bg-red-"],
-.havina-theme .on-navy [class*="border-red-"] {
-  color: var(--accent) !important;
+.cenos-theme .sidebar-cenos :is(button, a)[class*="bg-"],
+.cenos-theme .sidebar-cenos :is(button, a)[class*="text-red-"] {
+  background-color: var(--yellow) !important;
+  color: var(--navy) !important;
+  border-color: var(--yellow-dark) !important;
+}
+
+.cenos-theme .sidebar-cenos [class*="text-red-"],
+.cenos-theme .sidebar-cenos [class*="bg-red-"],
+.cenos-theme .sidebar-cenos [class*="border-red-"] {
+  color: var(--yellow) !important;
   background-color: transparent !important;
-  border-color: var(--accent) !important;
+  border-color: var(--yellow) !important;
 }
 
-/* CTA on light surfaces => red */
-.havina-theme :is(button, a)[class*="bg-indigo-"],
-.havina-theme :is(button, a)[class*="bg-blue-"],
-.havina-theme :is(button, a)[class*="bg-emerald-"],
-.havina-theme :is(button, a)[class*="bg-green-"] {
-  background-color: var(--action) !important;
-  color: #fff !important;
+.cenos-theme .sidebar-cenos [class*="text-slate-"],
+.cenos-theme .sidebar-cenos [class*="text-indigo-"],
+.cenos-theme .sidebar-cenos [class*="text-emerald-"],
+.cenos-theme .sidebar-cenos [class*="text-amber-"],
+.cenos-theme .sidebar-cenos [class*="text-blue-"],
+.cenos-theme .sidebar-cenos [class*="text-green-"],
+.cenos-theme .sidebar-cenos [class*="text-purple-"],
+.cenos-theme .sidebar-cenos [class*="text-orange-"] {
+  color: rgb(255 255 255 / 55%) !important;
 }
 
-.havina-theme :is(button, a)[class*="bg-indigo-"]:hover,
-.havina-theme :is(button, a)[class*="bg-blue-"]:hover,
-.havina-theme :is(button, a)[class*="bg-emerald-"]:hover,
-.havina-theme :is(button, a)[class*="bg-green-"]:hover {
-  background-color: var(--action-hover) !important;
-}
-
-/* CTA on navy => yellow with navy text */
-.havina-theme .on-navy :is(button, a)[class*="bg-indigo-"],
-.havina-theme .on-navy :is(button, a)[class*="bg-blue-"],
-.havina-theme .on-navy :is(button, a)[class*="bg-emerald-"],
-.havina-theme .on-navy :is(button, a)[class*="bg-green-"],
-.havina-theme .on-navy :is(button, a)[class*="bg-red-"] {
-  background-color: var(--accent) !important;
-  color: var(--primary) !important;
-}
-
-/* Accent / badges */
-.havina-theme .on-navy [class*="bg-amber-"],
-.havina-theme .on-navy [class*="bg-yellow-"] {
-  background-color: var(--accent) !important;
-  color: var(--primary) !important;
-}
-
-.havina-theme [class*="bg-indigo-50"],
-.havina-theme [class*="bg-indigo-100"],
-.havina-theme [class*="bg-blue-50"],
-.havina-theme [class*="bg-emerald-50"],
-.havina-theme [class*="bg-slate-50"] {
+.cenos-theme [class*="bg-slate-50"],
+.cenos-theme [class*="bg-indigo-50"],
+.cenos-theme [class*="bg-blue-50"],
+.cenos-theme [class*="bg-emerald-50"] {
   background-color: var(--surface) !important;
 }
 
-.havina-theme [class*="text-indigo-"],
-.havina-theme [class*="text-blue-"] {
-  color: var(--primary) !important;
+.cenos-theme [class*="bg-white"] {
+  background-color: var(--card-bg) !important;
 }
 
-.havina-theme [class*="text-emerald-"],
-.havina-theme [class*="text-red-"] {
-  color: var(--action) !important;
+.cenos-theme [class*="text-slate-900"],
+.cenos-theme [class*="text-slate-800"],
+.cenos-theme [class*="text-slate-700"] {
+  color: var(--text-body) !important;
 }
 
-.havina-theme [class*="text-orange-"] {
-  color: var(--action) !important;
+.cenos-theme [class*="text-slate-600"],
+.cenos-theme [class*="text-slate-500"],
+.cenos-theme [class*="text-slate-400"],
+.cenos-theme [class*="text-gray-600"],
+.cenos-theme [class*="text-gray-500"] {
+  color: var(--mid-text) !important;
 }
 
-.havina-theme [class*="bg-orange-"] {
-  background-color: color-mix(in srgb, var(--action) 16%, white) !important;
+.cenos-theme [class*="text-indigo-"],
+.cenos-theme [class*="text-blue-"] {
+  color: var(--navy) !important;
 }
 
-.havina-theme [class*="border-orange-"] {
-  border-color: color-mix(in srgb, var(--action) 40%, white) !important;
+.cenos-theme [class*="text-emerald-"] {
+  color: var(--success) !important;
 }
 
-/* Inputs focus rules */
-.havina-theme input:focus,
-.havina-theme select:focus,
-.havina-theme textarea:focus {
+.cenos-theme [class*="text-amber-"],
+.cenos-theme [class*="text-orange-"] {
+  color: var(--warning) !important;
+}
+
+.cenos-theme [class*="text-red-"] {
+  color: var(--red) !important;
+}
+
+.cenos-theme [class*="border-slate-"],
+.cenos-theme [class*="divide-slate-"] {
+  border-color: rgb(48 59 112 / 10%) !important;
+}
+
+.cenos-theme [class*="hover:bg-slate-50"]:hover,
+.cenos-theme [class*="hover:bg-gray-50"]:hover {
+  background-color: #f6f7fc !important;
+}
+
+.cenos-theme table thead tr {
+  background-color: var(--navy) !important;
+  color: var(--yellow) !important;
+}
+
+.cenos-theme table thead th {
+  color: var(--yellow) !important;
+  font-family: "Lexend", sans-serif;
+  font-weight: 600 !important;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.cenos-theme table tbody tr {
+  background-color: var(--card-bg) !important;
+  border-bottom: 1px solid rgb(48 59 112 / 7%) !important;
+}
+
+.cenos-theme table tbody td {
+  color: var(--mid-text) !important;
+}
+
+.cenos-theme table tbody td:first-child {
+  color: var(--navy) !important;
+  font-weight: 700 !important;
+}
+
+.cenos-theme input,
+.cenos-theme select,
+.cenos-theme textarea {
+  border-radius: 8px !important;
+}
+
+.cenos-theme input:focus,
+.cenos-theme select:focus,
+.cenos-theme textarea:focus {
   border-width: 2px !important;
-  border-color: var(--primary) !important;
+  border-color: var(--navy) !important;
   box-shadow: none !important;
 }
 
-.havina-theme .on-navy input:focus,
-.havina-theme .on-navy select:focus,
-.havina-theme .on-navy textarea:focus {
-  border-color: var(--accent) !important;
+.cenos-theme .sidebar-cenos input:focus,
+.cenos-theme .sidebar-cenos select:focus,
+.cenos-theme .sidebar-cenos textarea:focus {
+  border-color: var(--yellow) !important;
 }
 
-/* Badge/Tag rules */
-.havina-theme .on-navy :is(span, div)[class*="rounded-full"][class*="bg-"] {
-  background-color: var(--accent) !important;
-  color: var(--primary) !important;
-  border-color: var(--accent-dark) !important;
-}
-
-.havina-theme :is(span, div)[class*="rounded-full"][class*="bg-indigo-"],
-.havina-theme :is(span, div)[class*="rounded-full"][class*="bg-blue-"],
-.havina-theme :is(span, div)[class*="rounded-full"][class*="bg-slate-"] {
-  background-color: var(--primary) !important;
+.cenos-theme .stat-card-dark {
+  background-color: var(--navy) !important;
   color: #fff !important;
-  border-color: var(--primary-light) !important;
 }
 
-/* Progress bar rule: navy fill + yellow milestone */
-.havina-theme [class*="progress-track"] {
-  background-color: color-mix(in srgb, var(--primary) 20%, white) !important;
+.cenos-theme .stat-card-dark [class*="text-"],
+.cenos-theme .stat-card-dark h3 {
+  color: #fff !important;
 }
 
-.havina-theme [class*="progress-fill"] {
-  background-color: var(--primary) !important;
+.cenos-theme .stat-card-light {
+  background-color: var(--card-bg) !important;
+  border: 1px solid rgb(48 59 112 / 10%) !important;
 }
 
-.havina-theme [class*="milestone"],
-.havina-theme [class*="marker"] {
-  background-color: var(--accent) !important;
-  border-color: var(--primary) !important;
+.cenos-theme .stat-card-yellow {
+  background-color: var(--yellow) !important;
+  color: var(--navy) !important;
 }
 
-/* Error alert on white surfaces */
-.havina-theme .bg-red-50,
-.havina-theme [class*="bg-red-50"] {
+.cenos-theme .stat-card-yellow h3,
+.cenos-theme .stat-card-yellow p {
+  color: var(--navy) !important;
+}
+
+.cenos-theme [class*="rounded-full"][class*="bg-blue-100"] {
+  background-color: #dbeafe !important;
+  color: #1d4ed8 !important;
+}
+
+.cenos-theme [class*="rounded-full"][class*="bg-green-100"] {
+  background-color: #dcfce7 !important;
+  color: #16a34a !important;
+}
+
+.cenos-theme [class*="rounded-full"][class*="bg-amber-100"] {
+  background-color: #fef3c7 !important;
+  color: #d97706 !important;
+}
+
+.cenos-theme [class*="rounded-full"][class*="bg-slate-100"] {
+  background-color: rgb(48 59 112 / 10%) !important;
+  color: var(--navy) !important;
+}
+
+.cenos-theme [class*="rounded-full"][class*="bg-red-100"] {
+  background-color: rgb(237 28 41 / 10%) !important;
+  color: var(--red) !important;
+}
+
+.cenos-theme [class*="bg-red-50"] {
   background-color: #fde8e8 !important;
 }
 
-.havina-theme .border-red-100,
-.havina-theme .border-red-200,
-.havina-theme [class*="border-red-"] {
-  border-color: var(--action) !important;
+.cenos-theme [class*="border-red-"] {
+  border-color: var(--red) !important;
 }
 
-.havina-theme .text-red-700,
-.havina-theme .text-red-600,
-.havina-theme .text-red-500,
-.havina-theme [class*="text-red-"] {
-  color: var(--action) !important;
+.cenos-theme [class*="progress"],
+.cenos-theme [class*="bg-indigo-200"] {
+  background-color: color-mix(in srgb, var(--navy) 15%, white) !important;
 }
 
-/* Footer rule */
-.havina-theme footer {
-  background: var(--primary-dark) !important;
+.cenos-theme [class*="bg-indigo-600"],
+.cenos-theme [class*="bg-indigo-500"] {
+  background-color: var(--navy) !important;
+}
+
+.cenos-theme [class*="milestone"],
+.cenos-theme [class*="marker"] {
+  background-color: var(--yellow) !important;
+  border-color: var(--navy) !important;
+}
+
+.cenos-theme footer {
+  background: var(--navy-dark) !important;
   color: rgb(255 255 255 / 60%) !important;
 }
 
-.havina-theme footer a {
-  color: var(--accent) !important;
+.cenos-theme footer a {
+  color: var(--yellow) !important;
 }
 
-/* Explicit classes / hardcoded colors */
-.havina-theme .bg-\[\#303B70\],
-.havina-theme .bg-\[\#001f3f\] {
-  background-color: var(--primary) !important;
+.cenos-theme .sidebar-cenos [class*="text-yellow-"],
+.cenos-theme .sidebar-cenos .text-\[\#FFCB1F\] {
+  color: var(--yellow) !important;
 }
 
-.havina-theme .text-\[\#303B70\] {
-  color: var(--primary) !important;
+.cenos-theme .topbar-cenos [class*="bg-indigo-"],
+.cenos-theme .topbar-cenos [class*="bg-blue-"],
+.cenos-theme .topbar-cenos [class*="bg-emerald-"] {
+  background-color: var(--red) !important;
+  color: #fff !important;
 }
 
-.havina-theme .text-\[\#FFCB1F\] {
-  color: var(--accent) !important;
+.cenos-theme .bg-\[\#303B70\],
+.cenos-theme .bg-\[\#001f3f\] {
+  background-color: var(--navy) !important;
+}
+
+.cenos-theme .text-\[\#303B70\] {
+  color: var(--navy) !important;
+}
+
+.cenos-theme .text-\[\#FFCB1F\] {
+  color: var(--yellow) !important;
 }

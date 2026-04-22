@@ -798,8 +798,8 @@ const PermissionManagementView = () => {
     const getAccessColor = (level: AccessLevel) => {
       switch (level) {
         case 'none': return 'text-[var(--text-body)] bg-[var(--surface)] border-slate-200';
-        case 'view': return 'text-white bg-[var(--primary)] border-[var(--primary-light)]';
-        case 'full': return 'text-[var(--primary)] bg-[var(--accent)] border-[var(--accent-dark)]';
+        case 'view': return 'text-white bg-[var(--navy)] border-[var(--navy-light)]';
+        case 'full': return 'text-[var(--navy)] bg-[var(--yellow)] border-[var(--yellow-dark)]';
         default: return 'text-[var(--text-body)] bg-[var(--surface)] border-slate-200';
       }
     };
@@ -1019,8 +1019,8 @@ export default function App() {
       onClick={() => setActiveView(id)}
       className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg transition-all duration-200 ${
         activeView === id 
-          ? 'bg-[var(--accent)] text-[var(--primary)] shadow-lg' 
-          : 'text-white/80 hover:bg-white/10 hover:text-white'
+          ? 'bg-[rgba(255,203,31,0.12)] text-[var(--yellow)] border-l-[3px] border-[var(--yellow)] pl-[13px]' 
+          : 'text-white/55 hover:bg-white/10 hover:text-white'
       }`}
     >
       <Icon size={20} />
@@ -5197,15 +5197,15 @@ export default function App() {
   };
 
   return (
-    <div className="havina-theme min-h-screen bg-slate-50 flex font-sans text-slate-900">
+    <div className="cenos-theme min-h-screen bg-slate-50 flex font-sans text-slate-900">
       {/* Sidebar */}
       <motion.aside 
         initial={false}
         animate={{ width: isSidebarOpen ? 260 : 80 }}
-        className="on-navy bg-[var(--primary)] border-r border-[var(--primary-light)] flex flex-col sticky top-0 h-screen z-20"
+        className="sidebar-cenos bg-[var(--navy-dark)] border-r border-[rgba(255,255,255,0.08)] flex flex-col sticky top-0 h-screen z-20"
       >
         <div className="p-6 flex items-center gap-3 border-bottom border-white/20">
-          <div className="w-10 h-10 bg-[var(--accent)] rounded-xl flex items-center justify-center text-[var(--primary)] shrink-0">
+          <div className="w-10 h-10 bg-[var(--yellow)] rounded-xl flex items-center justify-center text-[var(--navy)] shrink-0">
             <GraduationCap size={24} />
           </div>
           {isSidebarOpen && (
@@ -5235,7 +5235,7 @@ export default function App() {
         </nav>
 
         <div className="p-4 border-t border-white/20">
-          <button className="w-full flex items-center gap-3 px-4 py-3 text-white/80 hover:text-[var(--primary)] hover:bg-[var(--accent)] rounded-lg transition-colors">
+          <button className="w-full flex items-center gap-3 px-4 py-3 text-white/80 hover:text-[var(--navy)] hover:bg-[var(--yellow)] rounded-lg transition-colors">
             <LogOut size={20} />
             <span className={`font-medium ${!isSidebarOpen && 'hidden'}`}>Đăng xuất</span>
           </button>
@@ -5245,18 +5245,18 @@ export default function App() {
       {/* Main Content */}
       <main className="flex-1 flex flex-col min-w-0">
         {/* Header */}
-        <header className="on-navy h-16 bg-[var(--primary)] border-b border-[var(--primary-light)] flex items-center justify-between px-8 sticky top-0 z-10">
+        <header className="topbar-cenos h-16 bg-[var(--card-bg)] border-b border-[rgba(48,59,112,0.1)] flex items-center justify-between px-8 sticky top-0 z-10">
           <div className="flex items-center gap-4">
             <button 
               onClick={() => setIsSidebarOpen(!isSidebarOpen)}
-              className="p-2 hover:bg-white/10 rounded-lg text-white/80"
+              className="p-2 hover:bg-[rgba(48,59,112,0.08)] rounded-lg text-[var(--navy)]"
             >
               <ChevronRight className={`transition-transform duration-300 ${isSidebarOpen ? 'rotate-180' : ''}`} size={20} />
             </button>
             <div className="flex items-center gap-2">
               <button 
                 onClick={() => setActiveView('students')}
-                className={`text-lg font-semibold transition-colors ${activeView === 'student-detail' || activeView === 'teacher-detail' ? 'text-white/70 hover:text-white' : 'text-white'}`}
+                className={`text-lg font-semibold transition-colors ${activeView === 'student-detail' || activeView === 'teacher-detail' ? 'text-[var(--navy-light)] hover:text-[var(--navy)]' : 'text-[var(--navy)]'}`}
               >
                 {activeView === 'teachers' || activeView === 'teacher-detail' ? 'Giảng viên' : 
                  activeView === 'finance' ? 'Finance' :
@@ -5269,8 +5269,8 @@ export default function App() {
               </button>
               {(activeView === 'student-detail' || activeView === 'teacher-detail') && (
                 <>
-                  <ChevronRight size={16} className="text-white/60" />
-                  <span className="text-lg font-semibold text-[var(--accent)]">
+                  <ChevronRight size={16} className="text-[var(--navy-light)]" />
+                  <span className="text-lg font-semibold text-[var(--navy)]">
                     {activeView === 'teacher-detail' ? 'Chi tiết giảng viên' : 'Chi tiết học viên'}
                   </span>
                 </>
@@ -5280,25 +5280,25 @@ export default function App() {
 
           <div className="flex items-center gap-4">
             <div className="relative hidden md:block">
-              <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-white/60" size={18} />
+              <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-[var(--navy-light)]" size={18} />
               <input 
                 type="text" 
                 placeholder="Tìm kiếm nhanh..." 
-                className="pl-10 pr-4 py-2 bg-white/10 border border-white/20 focus:bg-white/20 focus:border-[var(--accent)] rounded-full text-sm w-64 transition-all outline-none text-white placeholder:text-white/60"
+                className="pl-10 pr-4 py-2 bg-[var(--card-bg)] border border-[rgba(48,59,112,0.15)] focus:border-[var(--navy)] rounded-[8px] text-sm w-64 transition-all outline-none text-[var(--navy)] placeholder:text-[var(--navy-light)]"
               />
             </div>
-            <button className="p-2 text-white/80 hover:bg-white/10 rounded-full relative">
+            <button className="p-2 text-[var(--navy)] hover:bg-[rgba(48,59,112,0.08)] rounded-full relative">
               <Bell size={20} />
-              <span className="absolute top-1.5 right-1.5 w-2 h-2 bg-[var(--accent)] rounded-full border-2 border-[var(--primary)]"></span>
+              <span className="absolute top-1.5 right-1.5 w-2 h-2 bg-[var(--red)] rounded-full border-2 border-white"></span>
             </button>
-            <div className="h-8 w-px bg-white/20 mx-2"></div>
-            <div className="flex items-center gap-3 cursor-pointer hover:bg-white/10 p-1 pr-3 rounded-full transition-colors">
-              <div className="w-8 h-8 bg-[var(--accent)] text-[var(--primary)] rounded-full flex items-center justify-center font-bold text-xs">
+            <div className="h-8 w-px bg-[rgba(48,59,112,0.15)] mx-2"></div>
+            <div className="flex items-center gap-3 cursor-pointer hover:bg-[rgba(48,59,112,0.06)] p-1 pr-3 rounded-full transition-colors">
+              <div className="w-8 h-8 bg-[var(--navy)] text-white rounded-full flex items-center justify-center font-bold text-xs">
                 AD
               </div>
               <div className="hidden sm:block">
-                <p className="text-xs font-bold leading-none text-white">Admin User</p>
-                <p className="text-[10px] text-white/70 mt-1">Quản trị viên</p>
+                <p className="text-xs font-bold leading-none text-[var(--navy)]">Admin User</p>
+                <p className="text-[10px] text-[var(--mid-text)] mt-1">Quản trị viên</p>
               </div>
             </div>
           </div>
@@ -5326,33 +5326,39 @@ export default function App() {
                     <div
                       key={i}
                       className={`p-6 rounded-2xl border shadow-sm ${
-                        i % 2 === 0
-                          ? 'on-navy bg-[var(--primary)] border-[var(--primary-light)]'
-                          : 'bg-[var(--card-bg)] border-slate-200'
+                        i % 3 === 0
+                          ? 'stat-card-dark bg-[var(--navy)] border-[rgba(255,255,255,0.12)]'
+                          : i % 3 === 1
+                            ? 'stat-card-light bg-[var(--card-bg)] border-[rgba(48,59,112,0.1)]'
+                            : 'stat-card-yellow bg-[var(--yellow)] border-[rgba(48,59,112,0.15)]'
                       }`}
                     >
                       <div className="flex justify-between items-start mb-4">
                         <div
                           className={`p-3 rounded-xl ${
-                            i % 2 === 0
-                              ? 'bg-[var(--accent)] text-[var(--primary)]'
-                              : 'bg-[var(--surface)] text-[var(--action)]'
+                            i % 3 === 0
+                              ? 'bg-[rgba(255,203,31,0.2)] text-[var(--yellow)]'
+                              : i % 3 === 1
+                                ? 'bg-[rgba(48,59,112,0.08)] text-[var(--navy)]'
+                                : 'bg-[rgba(48,59,112,0.15)] text-[var(--navy)]'
                           }`}
                         >
                           <stat.icon size={24} />
                         </div>
                         <span
                           className={`text-xs font-bold px-2 py-1 rounded-lg ${
-                            i % 2 === 0
-                              ? 'bg-[var(--accent)] text-[var(--primary)]'
-                              : 'bg-[var(--surface)] text-[var(--action)]'
+                            i % 3 === 0
+                              ? 'bg-[rgba(255,255,255,0.15)] text-white'
+                              : i % 3 === 1
+                                ? 'bg-[rgba(237,28,41,0.1)] text-[var(--red)]'
+                                : 'bg-[rgba(48,59,112,0.15)] text-[var(--navy)]'
                           }`}
                         >
                           {stat.change}
                         </span>
                       </div>
-                      <p className={`text-sm font-medium ${i % 2 === 0 ? 'text-white/80' : 'text-[var(--text-body)]'}`}>{stat.label}</p>
-                      <h3 className={`text-2xl font-bold mt-1 ${i % 2 === 0 ? 'text-white' : 'text-[var(--primary)]'}`}>{stat.value}</h3>
+                      <p className={`text-sm font-medium ${i % 3 === 0 ? 'text-white/80' : 'text-[var(--mid-text)]'}`}>{stat.label}</p>
+                      <h3 className={`text-2xl font-extrabold mt-1 ${i % 3 === 0 ? 'text-white' : 'text-[var(--navy)]'}`}>{stat.value}</h3>
                     </div>
                   ))}
                 </div>
