@@ -313,9 +313,9 @@ const FinanceView = () => {
   }, {} as Record<string, { total: number, count: number }>);
 
   const staffInfo: Record<string, { color: string, name: string }> = {
-    'ST001': { color: 'blue', name: 'Admin' },
-    'ST002': { color: 'purple', name: 'Staff A' },
-    'ST003': { color: 'orange', name: 'Staff B' },
+    'ST001': { color: 'amber', name: 'Admin' },
+    'ST002': { color: 'amber', name: 'Staff A' },
+    'ST003': { color: 'amber', name: 'Staff B' },
   };
 
   // Mock Revenue Data for Tree Table
@@ -571,7 +571,7 @@ const FinanceView = () => {
           <div className="bg-white rounded-2xl border border-slate-100 shadow-sm overflow-hidden">
             <table className="w-full text-left border-collapse">
               <thead>
-                <tr className="bg-[#303B70] text-white">
+                <tr className="bg-[#1e3a5f] text-white">
                   <th className="px-4 py-4 text-[10px] font-bold uppercase tracking-wider">Student Name</th>
                   <th className="px-4 py-4 text-[10px] font-bold uppercase tracking-wider">Contract ID</th>
                   <th className="px-4 py-4 text-[10px] font-bold uppercase tracking-wider text-right">Fee</th>
@@ -1392,7 +1392,7 @@ export default function App() {
                         <div 
                           key={event.id}
                           className={`absolute left-1 right-1 rounded-lg p-2 shadow-sm z-10 overflow-hidden transition-transform hover:scale-[1.02] ${
-                            event.type === 'teaching' ? 'bg-[#303B70] text-white' :
+                            event.type === 'teaching' ? 'bg-[#1e3a5f] text-white' :
                             event.type === 'admin' ? 'bg-indigo-100 border border-indigo-200 text-indigo-700' :
                             'bg-red-600 text-white border-2 border-yellow-400'
                           }`}
@@ -2509,7 +2509,7 @@ export default function App() {
           <div className="overflow-x-auto">
             <table className="w-full text-left border-collapse">
               <thead>
-                <tr className="bg-[#001f3f] text-white">
+                <tr className="bg-[#1e3a5f] text-white">
                   <th className="px-4 py-3 text-[11px] font-bold uppercase border border-slate-700 text-center w-24">Student ID</th>
                   <th className="px-4 py-3 text-[11px] font-bold uppercase border border-slate-700 text-center w-48">Full Name</th>
                   {isMidterm ? (
@@ -3241,7 +3241,7 @@ export default function App() {
                           <li key={i} className="text-xs text-slate-600 flex items-start gap-2">
                             <span className="mt-1.5 w-1 h-1 rounded-full bg-slate-300 flex-shrink-0" />
                             {item.link ? (
-                              <a href={item.link} target="_blank" rel="noopener noreferrer" className="text-[#303B70] hover:underline font-medium">
+                              <a href={item.link} target="_blank" rel="noopener noreferrer" className="text-[#f0a500] hover:underline font-medium">
                                 {item.label}
                               </a>
                             ) : (
@@ -3540,7 +3540,7 @@ export default function App() {
               <div className="overflow-x-auto border border-slate-100 rounded-xl shadow-sm">
                 <table className="w-full text-left border-collapse table-fixed">
                   <thead>
-                    <tr className="bg-[#303B70] text-white">
+                    <tr className="bg-[#1e3a5f] text-white">
                       <th className="w-12 px-4 py-3 text-[10px] font-bold uppercase tracking-widest border-r border-white/10">STT</th>
                       <th className="w-48 px-4 py-3 text-[10px] font-bold uppercase tracking-widest border-r border-white/10">Student Name</th>
                       <th className="px-4 py-3 text-[10px] font-bold uppercase tracking-widest border-r border-white/10">Listening</th>
@@ -3602,7 +3602,7 @@ export default function App() {
             <div className="overflow-x-auto">
               <table className="w-full text-left border-collapse">
                 <thead>
-                  <tr className="bg-[#001f3f] text-white">
+                  <tr className="bg-[#1e3a5f] text-white">
                     <th className="px-4 py-3 text-[11px] font-bold uppercase border border-slate-700">Teacher</th>
                     <th className="px-4 py-3 text-[11px] font-bold uppercase border border-slate-700">Class ID</th>
                     <th className="px-4 py-3 text-[11px] font-bold uppercase border border-slate-700">Lesson Name</th>
@@ -3668,7 +3668,7 @@ export default function App() {
             <div className="overflow-x-auto">
               <table className="w-full text-left border-collapse min-w-[1200px]">
                 <thead>
-                  <tr className="bg-[#001f3f] text-white">
+                  <tr className="bg-[#1e3a5f] text-white">
                     {isEditingSyllabus && (
                       <th className="px-2 py-3 text-[11px] font-bold uppercase border border-slate-700 text-center w-12">Move</th>
                     )}
@@ -5111,7 +5111,7 @@ export default function App() {
                     <div className="overflow-x-auto">
                       <table className="w-full text-left border-collapse">
                         <thead>
-                          <tr className="bg-[#303B70] text-white">
+                          <tr className="bg-[#1e3a5f] text-white">
                             <th className="px-3 py-4 text-[10px] font-bold uppercase tracking-wider">Course ID</th>
                             <th className="px-3 py-4 text-[10px] font-bold uppercase tracking-wider">Contract</th>
                             <th className="px-3 py-4 text-[10px] font-bold uppercase tracking-wider">Class ID</th>
@@ -5197,7 +5197,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-50 flex font-sans text-slate-900">
+    <div className="navy-theme min-h-screen bg-slate-50 flex font-sans text-slate-900">
       {/* Sidebar */}
       <motion.aside 
         initial={false}

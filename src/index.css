@@ -1,1 +1,95 @@
 @import "tailwindcss";
+
+:root {
+  --color-navy: #1e3a5f;
+  --color-navy-soft: #25486f;
+  --color-navy-deep: #162d49;
+  --color-white: #ffffff;
+  --color-gold: #f0a500;
+}
+
+body {
+  background: var(--color-navy);
+  color: var(--color-white);
+}
+
+.navy-theme {
+  color: var(--color-white);
+}
+
+/* Core text colors -> white */
+.navy-theme [class*="text-slate-"],
+.navy-theme [class*="text-indigo-"],
+.navy-theme [class*="text-emerald-"],
+.navy-theme [class*="text-amber-"],
+.navy-theme [class*="text-yellow-"],
+.navy-theme [class*="text-blue-"],
+.navy-theme [class*="text-green-"],
+.navy-theme [class*="text-purple-"],
+.navy-theme [class*="text-orange-"],
+.navy-theme [class*="text-red-"] {
+  color: var(--color-white) !important;
+}
+
+/* Base surfaces -> navy */
+.navy-theme [class*="bg-white"],
+.navy-theme [class*="bg-slate-"] {
+  background-color: var(--color-navy-soft) !important;
+}
+
+/* Accent surfaces -> gold */
+.navy-theme [class*="bg-indigo-"],
+.navy-theme [class*="bg-emerald-"],
+.navy-theme [class*="bg-amber-"],
+.navy-theme [class*="bg-yellow-"],
+.navy-theme [class*="bg-blue-"],
+.navy-theme [class*="bg-green-"],
+.navy-theme [class*="bg-purple-"],
+.navy-theme [class*="bg-orange-"],
+.navy-theme [class*="bg-red-"] {
+  background-color: var(--color-gold) !important;
+  color: var(--color-navy-deep) !important;
+}
+
+/* Borders */
+.navy-theme [class*="border-slate-"] {
+  border-color: #3a587f !important;
+}
+
+.navy-theme [class*="border-indigo-"],
+.navy-theme [class*="border-emerald-"],
+.navy-theme [class*="border-amber-"],
+.navy-theme [class*="border-yellow-"],
+.navy-theme [class*="border-blue-"],
+.navy-theme [class*="border-green-"],
+.navy-theme [class*="border-purple-"],
+.navy-theme [class*="border-orange-"],
+.navy-theme [class*="border-red-"] {
+  border-color: var(--color-gold) !important;
+}
+
+/* Hover accents */
+.navy-theme [class*="hover:bg-slate-"]:hover,
+.navy-theme [class*="hover:bg-indigo-"]:hover,
+.navy-theme [class*="hover:bg-emerald-"]:hover,
+.navy-theme [class*="hover:bg-amber-"]:hover,
+.navy-theme [class*="hover:bg-yellow-"]:hover,
+.navy-theme [class*="hover:bg-blue-"]:hover,
+.navy-theme [class*="hover:bg-green-"]:hover,
+.navy-theme [class*="hover:bg-purple-"]:hover,
+.navy-theme [class*="hover:bg-orange-"]:hover,
+.navy-theme [class*="hover:bg-red-"]:hover {
+  background-color: var(--color-gold) !important;
+  color: var(--color-navy-deep) !important;
+}
+
+/* Handle explicit hex utility classes in App.tsx */
+.navy-theme .bg-\[\#303B70\],
+.navy-theme .bg-\[\#001f3f\],
+.navy-theme .bg-\[\#1e3a5f\] {
+  background-color: var(--color-navy) !important;
+}
+
+.navy-theme .text-\[\#303B70\] {
+  color: var(--color-white) !important;
+}
